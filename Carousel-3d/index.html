@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <div id="carousel" class="carousel">
+      <div class="carousel-bg">
+        <img id="carousel-background" src="" alt="bg" class="carousel-bg-img" />
+      </div>
+      <i id="btn-prev" class="icon-prev fa-solid fa-chevron-left"></i>
+      <i id="btn-next" class="icon-next fa-solid fa-chevron-right"></i>
+    </div>
+  </body>
+
+  <script src="./index.js"></script>
+  <script>
+    const carousel = new Carousel({
+      images: ['./static/pic1.jpg', './static/pic2.jpg', './static/pic3.jpg'],
+      animateDuration: 800,
+    })
+    const prev = document.getElementById('btn-prev')
+    const next = document.getElementById('btn-next')
+    carousel.initDom()
+    prev.addEventListener('click', () => {
+      carousel.switch('left')
+    })
+    next.addEventListener('click', () => {
+      carousel.switch('right')
+    })
+  </script>
+</html>
